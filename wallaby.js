@@ -3,9 +3,12 @@ module.exports = {
     'src/vector.js'
   ],
   'tests': [
-    'test/*-spec.js'
+    'tests/*-spec.js'
   ],
 	preprocessors: {
-		'**/*.js': [file => require('babel').transform(file.content)]
-	}
+		'**/*.js': [file => require('babel').transform(file.content, {modules: 'common', sourceMap: true})]
+	},
+  env: {
+    type: 'node'
+  }
 };
